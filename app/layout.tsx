@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { Source_Sans_3 as FontSans, Inter } from "next/font/google";
+import { Source_Sans_3 as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 
 const sourceSans3 = Source_Sans_3({subsets:['latin'],variable:'--font-sans'});
-const fontSans = FontSans({
-  variable: "--font-sans  ",
-  subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
-});
 export const metadata: Metadata = {
   title: "Sommaire - Ai-Powered PDF Summarization",
   description:
@@ -30,7 +25,6 @@ export default function RootLayout({
         "antialiased",
         "font-sans",
         sourceSans3.variable,
-        fontSans.variable,
       )}
     >
       <body className="min-h-full flex flex-col ">
