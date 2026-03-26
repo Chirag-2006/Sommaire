@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Source_Sans_3 as FontSans, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import Header from "@/components/common/Header";
+import Footer from "@/components/common/Footer";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
+const sourceSans3 = Source_Sans_3({subsets:['latin'],variable:'--font-sans'});
 const fontSans = FontSans({
   variable: "--font-sans  ",
   subsets: ["latin"],
@@ -23,9 +25,23 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", "font-sans", inter.variable, fontSans.variable)}
+      className={cn(
+        "h-full",
+        "antialiased",
+        "font-sans",
+        sourceSans3.variable,
+        fontSans.variable,
+      )}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col ">
+        <div className="relative flex flex-col min-h-screen">
+          <Header />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
+        </div>
+      </body>
     </html>
   );
 }
