@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import NavLinks from "./NavLinks";
 import { FileText } from "lucide-react";
+import { Show, SignInButton, UserButton } from "@clerk/nextjs";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -23,7 +24,7 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ",
         scrolled
           ? "mx-6 mt-4 rounded-xl backdrop-blur-xl bg-white/5 border-white/10"
           : "bg-transparent",
@@ -31,8 +32,8 @@ export default function Header() {
     >
       <div
         className={cn(
-          "flex items-center justify-between transition-all duration-300",
-          scrolled ? "h-14 px-6" : "h-16 px-8",
+          "flex items-center justify-between transition-all duration-300 container mx-auto ",
+          scrolled ? "h-14 px-6 " : "h-16 px-8 border-b-2 border-white/10",
         )}
       >
         {/* Logo */}
@@ -46,22 +47,31 @@ export default function Header() {
 
         {/* Links */}
         <nav className="hidden md:flex items-center gap-8 text-sm text-gray-300">
-          <NavLinks href="/#about" >About</NavLinks>
+          {/* <NavLinks href="/#about">About</NavLinks> */}
           <NavLinks href="/#pricing">Pricing</NavLinks>
-          {isLogedIn && <Link href="/dashboard">Dashboard</Link>}
+          <Show when="signed-in">
+            <NavLinks href="/dashboard">Dashboard</NavLinks>{" "}
+          </Show>
         </nav>
 
         {/* Button */}
-        {isLogedIn ? (
-          <div className="flex gap-1 lg:gap-2 ">
-            <div>PRO</div>
-            <div className="">USER</div>
+        <Show when={"signed-in"}>
+          <div className="flex gap-1 lg:gap-2 items-center ">
+            <NavLinks href="/upload" className="text-sm text-primary pr-2">upload a pdf</NavLinks>
+            <div>pro</div>
+            <UserButton />
           </div>
-        ) : (
-          <NavLinks href="/sign-in">
-            <Button variant={"glow"}>Get Started</Button>
-          </NavLinks>
-        )}
+        </Show>
+
+        <Show when={"signed-out"}>
+          <div className="">
+            <SignInButton>
+              <NavLinks href="/sign-in">
+                <Button variant={"glow"} className="cursor-pointer">Get Started</Button>
+              </NavLinks>
+            </SignInButton>
+          </div>
+        </Show>
       </div>
     </header>
   );
