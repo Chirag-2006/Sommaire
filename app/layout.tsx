@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 
-const sourceSans3 = Source_Sans_3({subsets:['latin'],variable:'--font-sans'});
+const fontSans = FontSans({subsets:['latin'],variable:'--font-sans'});
 export const metadata: Metadata = {
   title: "Sommaire - Ai-Powered PDF Summarization",
   description:
@@ -24,7 +24,7 @@ export default function RootLayout({
         "h-full",
         "antialiased",
         "font-sans",
-        sourceSans3.variable,
+        fontSans.variable,
       )}
     >
       <body className="min-h-full flex flex-col ">

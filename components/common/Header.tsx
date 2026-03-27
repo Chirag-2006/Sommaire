@@ -1,38 +1,40 @@
-import Link from "next/link";
+import { FileText } from "lucide-react";
+import NavLinks from "./NavLinks";
 
 export default function Header() {
+  const isLogedIn = false;
   return (
-    <header className="w-full border-b">
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        
-        {/* Left - Logo */}
-        <div className="flex items-center">
-          <Link href="/" className="text-xl font-bold">
-            Sommaire
-          </Link>
-        </div>
-
-        {/* Middle - Nav Links */}
-        <nav className=" flex items-center gap-6">
-          <Link
-            href="/pricing"
-            className="text-sm font-medium text-gray-600 hover:text-black transition"
+    <>
+      <nav className="container flex justify-between items-center py-4 px-2 lg:py-8 mx-auto">
+        <div className="flex lg:flex-1">
+          <NavLinks
+            href="/"
+            className="flex items-center gap-1 lg:gap-2 shrink-0"
           >
-            Pricing
-          </Link>
-        </nav>
-
-        {/* Right - Auth */}
-        <div className="flex items-center">
-          <Link
-            href="/sign-in"
-            className="px-4 py-2 text-sm font-medium rounded-md border hover:bg-gray-100 transition"
-          >
-            Sign In
-          </Link>
+            <FileText className="w-5 h-5 lg:w-8 lg:h-8 text-gray-900 hover:rotate-12 transform transition duration-200 ease-in-out " />
+            <span className="text-gray-900 font-extrabold lg:text-xl">
+              Sommaire
+            </span>
+          </NavLinks>
         </div>
-
-      </div>
-    </header>
+        <div className="flex lg:justify-center gap-4 lg:gap-12 lg:items-center">
+          <NavLinks href={"/#pricing"}>Pricing</NavLinks>
+          {isLogedIn && <NavLinks href={"/dashboard"}>Dashboard</NavLinks>}
+        </div>
+        <div className="flex lg:justify-end lg:flex-1">
+          {isLogedIn ? (
+            <div className="flex gap-2 items-center">
+              <NavLinks href="/upload">Upload a pdf</NavLinks>
+              <div>PRO</div>
+              <div>user</div>
+            </div>
+          ) : (
+            <div className="">
+              <NavLinks href={"/sign-in"}>Sign In</NavLinks>
+            </div>
+          )}
+        </div>
+      </nav>
+    </>
   );
 }
