@@ -19,7 +19,7 @@ export default function HeroSection() {
         {/* Heading */}
         <h1 className="leading-tight tracking-tight">
           Turn Long PDFs into <br />
-          <span className="bg-linear-to-r from-primary to-cyan-400 bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-indigo-500 to-cyan-400 bg-clip-text text-transparent">
             Visual AI Summaries
           </span>
         </h1>

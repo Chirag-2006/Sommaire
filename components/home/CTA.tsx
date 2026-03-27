@@ -7,7 +7,7 @@ export default function CTA() {
     <section className="py-24 relative">
       {/* Background glow */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-primary/20 blur-[120px] rounded-full" />
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-125 h-75 bg-primary/20 blur-[120px] rounded-full" />
       </div>
 
       <div className="container mx-auto">
@@ -33,7 +33,7 @@ export default function CTA() {
               <Button
                 variant={'glow'}
                 size="lg"
-                className=" group px-4 py-6 shadow-lg shadow-primary/30 transition-all duration-300"
+                className=" group px-4 py-6 shadow-lg shadow-cyan-400/30 transition-all duration-300"
               >
                 Get Sommaire AI Now
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 ease-in-out transition-all duration-200 " />

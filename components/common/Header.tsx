@@ -40,7 +40,7 @@ export default function Header() {
           href="/"
           className="flex items-center gap-1 lg:gap-2 shrink-0"
         >
-          <FileText className="w-5 h-5 lg:w-8 lg:h-8 text-primary hover:rotate-12 transform transition duration-200 ease-in-out " />
+          <FileText className="w-5 h-5 lg:w-8 lg:h-8 text-cyan-400/80 hover:rotate-12 transform transition duration-200 ease-in-out " />
           <span className="font-extrabold lg:text-xl text-white">Sommaire</span>
         </Link>
 
