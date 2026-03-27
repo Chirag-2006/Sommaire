@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const fontSans = FontSans({ subsets: ["latin"], variable: "--font-sans" });
 export const metadata: Metadata = {
@@ -18,23 +19,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={cn(
-        "h-full",
-        "antialiased",
-        "font-sans",
-        "scroll-smooth",
-        fontSans.variable,
-      )}
-    >
-      <body className="min-h-full flex flex-col ">
-        <div className="relative flex flex-col min-h-screen text-white bg-[#020617]">
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html
+        lang="en"
+        className={cn(
+          "h-full",
+          "antialiased",
+          "font-sans",
+          "scroll-smooth",
+          fontSans.variable,
+        )}
+      >
+        <body className="min-h-full flex flex-col ">
+          <div className="relative flex flex-col min-h-screen text-white bg-[#020617]">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
