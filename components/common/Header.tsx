@@ -46,7 +46,7 @@ export default function Header() {
 
         {/* Links */}
         <nav className="hidden md:flex items-center gap-8 text-sm text-gray-300">
-          <NavLinks href="/about" >About</NavLinks>
+          <NavLinks href="/#about" >About</NavLinks>
           <NavLinks href="/#pricing">Pricing</NavLinks>
           {isLogedIn && <Link href="/dashboard">Dashboard</Link>}
         </nav>
