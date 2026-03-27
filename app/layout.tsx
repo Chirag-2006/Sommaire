@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 
-const fontSans = FontSans({subsets:['latin'],variable:'--font-sans'});
+const fontSans = FontSans({ subsets: ["latin"], variable: "--font-sans" });
 export const metadata: Metadata = {
   title: "Sommaire - Ai-Powered PDF Summarization",
   description:
@@ -24,15 +24,14 @@ export default function RootLayout({
         "h-full",
         "antialiased",
         "font-sans",
+        "scroll-smooth",
         fontSans.variable,
       )}
     >
       <body className="min-h-full flex flex-col ">
         <div className="relative flex flex-col min-h-screen text-white">
           <Header />
-          <main className="flex-1">
-            {children}
-          </main>
+          <main className="flex-1">{children}</main>
           <Footer />
         </div>
       </body>

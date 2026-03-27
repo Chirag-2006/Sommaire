@@ -1,5 +1,6 @@
 import Features from "@/components/home/Features";
 import HeroSection from "@/components/home/HeroSection";
+import Pricing from "@/components/home/Pricing";
 import { Button } from "@/components/ui/button";
 import { UploadIcon } from "lucide-react";
 import Image from "next/image";
@@ -9,6 +10,7 @@ export default function Home() {
     <div className="bg-[#020617] min-h-screen">
       <HeroSection />
       <Features />
+      <Pricing />
     </div>
    
   );
