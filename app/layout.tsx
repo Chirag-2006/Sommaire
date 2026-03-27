@@ -28,7 +28,7 @@ export default function RootLayout({
       )}
     >
       <body className="min-h-full flex flex-col ">
-        <div className="relative flex flex-col min-h-screen">
+        <div className="relative flex flex-col min-h-screen text-white">
           <Header />
           <main className="flex-1">
             {children}
