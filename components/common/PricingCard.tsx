@@ -21,20 +21,20 @@ export default function PricingCard({
       className={`relative overflow-hidden backdrop-blur-xl transition-all duration-300
       ${
         popular
-          ? "border border-primary/40 bg-transparent shadow-[0_0_40px_rgba(99,102,241,0.3)]"
+          ? "border border-cyan-400/40 bg-transparent shadow-[0_0_40px_rgba(99,102,241,0.3)]"
           : "border border-white/10 bg-linear-to-br from-[#0b1220] via-[#0f172a] to-[#111827]"
       }`}
     >
       {/* Popular Badge */}
       {popular && (
-        <span className="absolute top-4 right-4 text-xs px-2 py-1 rounded-md bg-primary/20 text-primary">
+        <span className="absolute top-4 right-4 text-xs px-2 py-1 rounded-md bg-cyan-400/20 text-cyan-400">
           POPULAR
         </span>
       )}
 
       {/* Glow */}
       {popular && (
-        <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-72 h-72 bg-primary/30 blur-3xl" />
+        <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-72 h-72 bg-cyan-400/30 blur-3xl" />
       )}
 
       {/* Overlay */}
@@ -69,7 +69,7 @@ export default function PricingCard({
             variant={popular ? "glow" : "default"}
             className={`w-full group ${
               popular
-                ? " shadow-lg shadow-primary/30"
+                ? " shadow-lg shadow-cyan-400/30"
                 : "bg-white/10 hover:bg-white/20 text-white"
             } transition-all`}
           >

@@ -27,6 +27,7 @@ export default function RootLayout({
         "scroll-smooth",
         fontSans.variable,
       )}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col ">
         <div className="relative flex flex-col min-h-screen text-white bg-[#020617]">
