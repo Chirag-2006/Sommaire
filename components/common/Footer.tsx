@@ -28,9 +28,9 @@ export default function Footer() {
         <div>
           <h4 className="text-white/80 mb-3 font-semibold">Product</h4>
           <div className="flex flex-col gap-2 text-muted-foreground text-sm">
-            <Link href="#" className="text-muted/50 hover:text-muted-foreground">Features</Link>
-            <Link href="#" className="text-muted/50 hover:text-muted-foreground">Pricing</Link>
-            <Link href="#" className="text-muted/50 hover:text-muted-foreground">API Docs</Link>
+            <Link href="/#feature" className="text-muted/50 hover:text-muted-foreground">Features</Link>
+            <Link href="/#pricing" className="text-muted/50 hover:text-muted-foreground">Pricing</Link>
+            <Link href="/#docs" className="text-muted/50 hover:text-muted-foreground">API Docs</Link>
           </div>
         </div>
 
@@ -38,9 +38,9 @@ export default function Footer() {
         <div>
           <h4 className="text-white/80 mb-3 font-semibold">Company</h4>
           <div className="flex flex-col gap-2  text-sm">
-            <Link href="#" className="text-muted/50 hover:text-muted-foreground">About</Link>
-            <Link href="#" className="text-muted/50 hover:text-muted-foreground">Contact</Link>
-            <Link href="#" className="text-muted/50 hover:text-muted-foreground">Privacy Policy</Link>
+            <Link href="/#about" className="text-muted/50 hover:text-muted-foreground">About</Link>
+            <Link href="/#contact" className="text-muted/50 hover:text-muted-foreground">Contact</Link>
+            <Link href="/#privacy" className="text-muted/50 hover:text-muted-foreground">Privacy Policy</Link>
           </div>
         </div>
 

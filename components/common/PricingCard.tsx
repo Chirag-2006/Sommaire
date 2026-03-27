@@ -64,7 +64,7 @@ export default function PricingCard({
         </ul>
 
         {/* Button */}
-        <NavLinks href="/sign-up">
+        <NavLinks href="/checkout-page">
           <Button
             variant={popular ? "glow" : "default"}
             className={`w-full group ${
