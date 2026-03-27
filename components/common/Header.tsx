@@ -44,7 +44,7 @@ export default function Header() {
 
         {/* Links */}
         <nav className="hidden md:flex items-center gap-8 text-sm text-gray-300">
-          <NavLinks href="/#about">About</NavLinks>
+          {/* <NavLinks href="/#about">About</NavLinks> */}
           <NavLinks href="/#pricing">Pricing</NavLinks>
           <Show when="signed-in">
             <NavLinks href="/dashboard">Dashboard</NavLinks>{" "}
@@ -53,8 +53,9 @@ export default function Header() {
 
         {/* Button */}
         <Show when={"signed-in"}>
-          <div className="flex gap-1 lg:gap-2 ">
-            <div>PRO</div>
+          <div className="flex gap-1 lg:gap-2 items-center ">
+            <NavLinks href="/upload" className="text-sm text-primary pr-2">upload a pdf</NavLinks>
+            <div>pro</div>
             <UserButton />
           </div>
         </Show>
