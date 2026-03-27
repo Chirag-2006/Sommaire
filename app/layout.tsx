@@ -29,7 +29,7 @@ export default function RootLayout({
       )}
     >
       <body className="min-h-full flex flex-col ">
-        <div className="relative flex flex-col min-h-screen text-white">
+        <div className="relative flex flex-col min-h-screen text-white bg-[#020617]">
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
